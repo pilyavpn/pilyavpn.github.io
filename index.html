@@ -47,7 +47,6 @@
             z-index: 1;
         }
 
-        /* Header */
         header {
             background: linear-gradient(120deg, var(--warm-beige) 0%, var(--accent-beige) 100%);
             padding: 12px 0;
@@ -97,7 +96,6 @@
             color: var(--dark-beige);
         }
 
-        /* Burger Menu */
         .menu-toggle {
             display: none;
             background: none;
@@ -106,12 +104,6 @@
             color: var(--text-color);
             cursor: pointer;
             padding: 8px;
-            transition: var(--transition);
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
         }
 
         nav ul {
@@ -143,7 +135,6 @@
             .menu-toggle {
                 display: block;
             }
-            
             nav ul {
                 position: fixed;
                 top: 70px;
@@ -159,14 +150,11 @@
                 box-shadow: var(--shadow);
                 z-index: 999;
             }
-            
             nav ul.active {
                 left: 0;
             }
-            
             nav a {
                 padding: 12px 20px;
-                background: rgba(255, 255, 255, 0.3);
             }
         }
 
@@ -190,7 +178,6 @@
             box-shadow: var(--shadow);
         }
 
-        /* Hero */
         .hero {
             padding: 40px 0;
             display: flex;
@@ -245,7 +232,6 @@
             50% { transform: translateY(-15px); }
         }
 
-        /* VPN Card */
         .vpn-card {
             background: linear-gradient(135deg, white, var(--light-beige));
             border-radius: 30px;
@@ -269,7 +255,6 @@
             margin-top: 20px;
         }
 
-        /* Features */
         .features {
             padding: 50px 0;
         }
@@ -326,7 +311,6 @@
             color: var(--dark-beige);
         }
 
-        /* Servers */
         .servers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -363,7 +347,6 @@
             font-size: 12px;
         }
 
-        /* Setup */
         .setup-section {
             background: rgba(255, 255, 255, 0.6);
             border-radius: 30px;
@@ -433,7 +416,6 @@
             flex-shrink: 0;
         }
 
-        /* Facts */
         .facts-section {
             background: rgba(255, 255, 255, 0.6);
             border-radius: 30px;
@@ -449,7 +431,6 @@
             margin-top: 20px;
         }
 
-        /* Footer */
         footer {
             background: linear-gradient(120deg, var(--warm-beige) 0%, var(--dark-beige) 100%);
             padding: 40px 0 20px;
@@ -534,7 +515,7 @@
                     <li><a href="#servers" class="nav-link"><i class="fas fa-server"></i> Серверы</a></li>
                     <li><a href="#setup" class="nav-link"><i class="fas fa-cogs"></i> Настройка</a></li>
                     <li><a href="#facts" class="nav-link"><i class="fas fa-paw"></i> Факты</a></li>
-                    <li><button class="btn" id="checkIpBtn" style="margin-left: 10px;"><i class="fas fa-globe"></i> Мой IP</button></li>
+                    <li><button class="btn" id="checkIpBtn"><i class="fas fa-globe"></i> Мой IP</button></li>
                 </ul>
             </nav>
         </div>
@@ -543,21 +524,19 @@
 
 <main>
     <div class="container">
-        <!-- Hero -->
         <section class="hero">
             <div class="hero-content">
                 <h2>Защитите свой интернет с <span>ПиляВПН</span> 🐾</h2>
-                <p>Надежный VPN-сервис с премиальным шифрованием. Более 150+ серверов по всему миру. Ваша безопасность - наш приоритет.</p>
+                <p>Надежный VPN-сервис с премиальным шифрованием. Более 47 серверов по всему миру. Ваша безопасность - наш приоритет.</p>
                 <button class="btn" id="scrollToSetupBtn"><i class="fas fa-wrench"></i> Инструкции</button>
             </div>
             <div class="hero-image">
-                <img src="dog_connected.jpg" alt="ПиляВПН" class="hero-dog active" id="dog1">
-                <img src="dog_disconnected.jpg" alt="ПиляВПН" class="hero-dog" id="dog2">
-                <img src="dog_playing.jpg" alt="ПиляВПН" class="hero-dog" id="dog3">
+                <img src="dog_connected.jpg" alt="ПиляВПН" class="hero-dog active">
+                <img src="dog_disconnected.jpg" alt="ПиляВПН" class="hero-dog">
+                <img src="dog_playing.jpg" alt="ПиляВПН" class="hero-dog">
             </div>
         </section>
 
-        <!-- VPN Connect -->
         <div class="vpn-card">
             <i class="fas fa-dog" style="font-size: 50px; color: var(--dark-beige);"></i>
             <h2 style="margin: 15px 0;">🚀 Мгновенное подключение VPN</h2>
@@ -565,10 +544,9 @@
             <button class="connect-btn" id="quickConnectBtn">
                 <i class="fas fa-bolt"></i> Подключить VPN
             </button>
-            <p style="font-size: 12px; margin-top: 15px;">✨ Поддержка VLESS / VMess / Shadowsocks / Trojan / Hysteria2</p>
+            <p style="font-size: 12px; margin-top: 15px;">✨ Поддержка VLESS / VMess / Shadowsocks / Trojan / Hysteria2 | 47+ серверов</p>
         </div>
 
-        <!-- Features -->
         <section class="features" id="features">
             <h2 class="section-title">Почему выбирают нас? 🐕</h2>
             <div class="features-grid">
@@ -579,7 +557,6 @@
             </div>
         </section>
 
-        <!-- Servers -->
         <section id="servers">
             <h2 class="section-title">🌍 Наши серверы</h2>
             <div class="servers-grid">
@@ -598,7 +575,6 @@
             </div>
         </section>
 
-        <!-- Setup Instructions -->
         <section class="setup-section" id="setup">
             <h2 class="section-title">📱 Инструкции по настройке</h2>
             <div class="platform-tabs">
@@ -629,12 +605,11 @@
             </div>
         </section>
 
-        <!-- Facts -->
         <section class="facts-section" id="facts">
             <h2 class="section-title">Забавные факты о собаках 🐕</h2>
             <div class="fact-container">
                 <div class="fact-text" id="uselessFact">
-                    Собаки могут понимать до 250 слов и жестов, что делает их умнее, чем обычный человек (но не пользователя ПиляВПН).
+                    Собаки могут понимать до 250 слов и жестов, что делает их умнее, чем обычный человек.
                 </div>
             </div>
         </section>
@@ -652,42 +627,178 @@
 </footer>
 
 <script>
-    // ПОЛНЫЙ СПИСОК КОНФИГУРАЦИЙ (все что вы прислали)
+    // 47 КОНФИГУРАЦИЙ (первые 47 из вашего списка)
     const vpnConfigs = [
-        "vless://424e7cc4-df34-3518-9c7b-401db4ece90a@s121.ccgfw.top:443?encryption=none&type=grpc&headerType=none&fp=ios&host=s121.ccgfw.top&path=&flow=&security=tls&sni=u710947u7938s121.ccgfw.top&serviceName=ssp&mode=gun&alpn=#%F0%9F%87%A9%F0%9F%87%AA%20Germany%2C%20Frankfurt%20am%20Main%20%7C%20%5BBL%5D",
-        "vless://424e7cc4-df34-3518-9c7b-401db4ece90a@s863.ccgfw.top:443?encryption=none&type=grpc&headerType=none&fp=ios&host=s863.ccgfw.top&path=&flow=&security=tls&sni=u710947u4a5cs863.ccgfw.top&serviceName=ssp&mode=gun&alpn=#%F0%9F%87%A9%F0%9F%87%AA%20Germany%2C%20Frankfurt%20am%20Main%20%7C%20%5BBL%5D",
-        "vless://424e7cc4-df34-3518-9c7b-401db4ece90a@s722.okgfw.top:443?encryption=none&type=tcp&headerType=none&fp=random&host=s722.okgfw.top&path=&flow=xtls-rprx-vision&security=tls&sni=u710947u3516s722.okgfw.top&serviceName=&mode=&alpn=#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%7C%20%F0%9F%8C%90%20%7C%20%5BIPv6%5D%20%7C%20%5BBL%5D",
-        "vless://26524cce-d514-4014-a426-365fb266a14d@43.250.54.63:8443?encryption=none&security=tls&sni=_acme-challenge.443888.xyz&insecure=0&allowInsecure=0&type=ws&host=_acme-challenge.443888.xyz&path=%2Fdanfeng%3Fed%3D2560#%F0%9F%8C%90%20Anycast-IP%20%7C%20%5BIPv6%5D%20%7C%20%5BBL%5D",
-        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@1.164.6.18:50099#%F0%9F%87%B9%F0%9F%87%BC%20Taiwan%20%7C%20%F0%9F%8C%90%20%7C%20%5BIPv6%5D%20%7C%20%5BBL%5D",
-        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@111.248.79.83:50099#%F0%9F%87%B9%F0%9F%87%BC%20Taiwan%20%7C%20%F0%9F%8C%90%20%7C%20%5BIPv6%5D%20%7C%20%5BBL%5D",
-        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@n8mrcg004767yf3.cybervena.com:50099#%F0%9F%87%B9%F0%9F%87%BC%20Taiwan%20%7C%20%F0%9F%8C%90%20%7C%20%5BIPv6%5D%20%7C%20%5BBL%5D",
-        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@1.163.202.26:50099#%F0%9F%87%B9%F0%9F%87%BC%20Taiwan%20%7C%20%F0%9F%8C%90%20%7C%20%5BIPv6%5D%20%7C%20%5BBL%5D",
-        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@111.250.207.173:50099#%F0%9F%87%B9%F0%9F%87%BC%20Taiwan%20%7C%20%F0%9F%8C%90%20%7C%20%5BIPv6%5D%20%7C%20%5BBL%5D",
-        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@114.45.163.12:50099#%F0%9F%87%B9%F0%9F%87%BC%20Taiwan%20%7C%20%F0%9F%8C%90%20%7C%20%5BIPv6%5D%20%7C%20%5BBL%5D",
-        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@116.241.42.86:50099?#%F0%9F%87%B9%F0%9F%87%BC%20Taiwan%2C%20Taichung%20%7C%20%5BBL%5D",
-        "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.151.57.112:38388#%F0%9F%87%BB%F0%9F%87%B3%20Vietnam%2C%20Ho%20Chi%20Minh%20City%20%7C%20%5BBL%5D",
-        "vmess://eyJhZGQiOiJoazAzLnN0aW1heXNtaHk4LmNvbSIsImFpZCI6IjAiLCJob3N0IjoiaGswMy5zdGltYXlzbWh5OC5jb20iLCJpZCI6IjcxMTY1MzkzLTUyNTItNGZlYS1hYzk2LWMzNmI1MDg3MjBjOCIsIm5ldCI6IndzIiwicGF0aCI6Ii8iLCJwb3J0IjoiNDQ1NTIiLCJwcyI6IvCfh63wn4ewIEhvbmcgS29uZyB8IPCfjJAgfCBbSVB2Nl0gfCBbQkxdIiwic2N5IjoiYXV0byIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIiLCJzbmkiOiIiLCJhbHBuIjoiIiwiZnAiOiIifQ==",
-        "vmess://eyJ2IjoiMiIsInBzIjoi8J+HrPCfh6cgVW5pdGVkIEtpbmdkb20sIENvdmVudHJ5IHwgW0JMXSIsImFkZCI6ImdiMDEuanN5bGlhbmppZTUuY29tIiwicG9ydCI6IjQ1NzEyIiwiaWQiOiI3MTE2NTM5My01MjUyLTRmZWEtYWM5Ni1jMzZiNTA4NzIwYzgiLCJhaWQiOiIwIiwic2N5IjoiYXV0byIsIm5ldCI6IndzIiwidHlwZSI6Im5vbmUiLCJ0bHMiOiIiLCJwYXRoIjoiLyIsImhvc3QiOiJnYjAxLmpzeWxpYW5qaWU1LmNvbSIsInNuaSI6IiIsImFscG4iOiIiLCJmcCI6IiJ9",
-        "vmess://eyJ2IjoiMiIsInBzIjoi8J+MkCBBbnljYXN0LUlQIHwgW0lQdjZdIHwgW0JMXSIsImFkZCI6ImhrMTguc3RpbWF5c21oeTguY29tIiwicG9ydCI6IjUxMjU0IiwiaWQiOiI3MTE2NTM5My01MjUyLTRmZWEtYWM5Ni1jMzZiNTA4NzIwYzgiLCJhaWQiOiIwIiwic2N5IjoiYXV0byIsIm5ldCI6IndzIiwidHlwZSI6Im5vbmUiLCJ0bHMiOiIiLCJwYXRoIjoiLyIsImhvc3QiOiJoazE4LnN0aW1heXNtaHk4LmNvbSIsInNuaSI6IiIsImFscG4iOiIiLCJmcCI6IiJ9",
-        "trojan://nodes-d2ac438d@31.192.233.38:8443?security=tls&sni=node-hk-1.v2sv.top&insecure=1&allowInsecure=1&type=tcp&headerType=none#%F0%9F%87%AD%F0%9F%87%B0%20Hong%20Kong%2C%20Hong%20Kong%20%7C%20%5BBL%5D",
-        "trojan://3PfyPiLUGm@216.234.140.55:47574/?type=grpc&serviceName=&authority=&security=reality&pbk=J7DCqfA-0diON1NvlmtTfS39hxEoKK7Nt8qCeh7IqQ4&fp=chrome&sni=aws.amazon.com&sid=7e50e4900bce65&spx=/#%F0%9F%87%BA%F0%9F%87%B8%20United%20States%2C%20Los%20Angeles%20%28Central-Alameda%29%20%7C%20%F0%9F%8C%90%20%7C%20%5BIPv6%5D%20%7C%20%5BBL%5D",
-        "trojan://trojan@152.53.60.198:8444?security=tls&sni=jflsjlaf.pages.dev&insecure=1&allowInsecure=1&type=ws&host=jflsjlaf.pages.dev&path=%2F#%F0%9F%8C%90%20Anycast-IP%20%7C%20%5BIPv6%5D%20%7C%20%5BBL%5D",
-        "hysteria2://ea8d14d4-ca12-4cd1-bcad-f0fa72f6eadc@212.193.18.60:8443/?insecure=1#%F0%9F%87%AB%F0%9F%87%AE%20Finland%2C%20Helsinki%20%7C%20%5BBL%5D",
-        "hysteria2://ea8d14d4-ca12-4cd1-bcad-f0fa72f6eadc@193.124.46.139:8443/?insecure=1#%F0%9F%87%B9%F0%9F%87%B7%20Turkey%2C%20Istanbul%20%7C%20%F0%9F%8C%90%20%7C%20%5BIPv6%5D%20%7C%20%5BBL%5D"
+        "vless://424e7cc4-df34-3518-9c7b-401db4ece90a@s121.ccgfw.top:443?encryption=none&type=grpc&headerType=none&fp=ios&host=s121.ccgfw.top&path=&flow=&security=tls&sni=u710947u7938s121.ccgfw.top&serviceName=ssp&mode=gun&alpn=#%F0%9F%87%A9%F0%9F%87%AA%20Germany",
+        "vless://424e7cc4-df34-3518-9c7b-401db4ece90a@s863.ccgfw.top:443?encryption=none&type=grpc&headerType=none&fp=ios&host=s863.ccgfw.top&path=&flow=&security=tls&sni=u710947u4a5cs863.ccgfw.top&serviceName=ssp&mode=gun&alpn=#%F0%9F%87%A9%F0%9F%87%AA%20Germany%202",
+        "vless://424e7cc4-df34-3518-9c7b-401db4ece90a@s722.okgfw.top:443?encryption=none&type=tcp&headerType=none&fp=random&host=s722.okgfw.top&path=&flow=xtls-rprx-vision&security=tls&sni=u710947u3516s722.okgfw.top#%F0%9F%87%B3%F0%9F%87%B1%20Netherlands",
+        "vless://26524cce-d514-4014-a426-365fb266a14d@43.250.54.63:8443?encryption=none&security=tls&sni=_acme-challenge.443888.xyz&type=ws&host=_acme-challenge.443888.xyz&path=%2Fdanfeng%3Fed%3D2560#Anycast",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@1.164.6.18:50099#Taiwan",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@111.248.79.83:50099#Taiwan%202",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@n8mrcg004767yf3.cybervena.com:50099#Taiwan%203",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@1.163.202.26:50099#Taiwan%204",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@111.250.207.173:50099#Taiwan%205",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@114.45.163.12:50099#Taiwan%206",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@116.241.42.86:50099?#Taiwan%20Taichung",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@36.227.206.73:50099#Taiwan%20Taipei",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@111.241.84.132:50099#Taiwan%20Taipei%202",
+        "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.151.57.112:38388#Vietnam%20HCMC",
+        "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.11:38388#Vietnam%20Hai%20Duong",
+        "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.12:38388#Vietnam%20Hai%20Duong%202",
+        "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.13:38388#Vietnam%20Hai%20Duong%203",
+        "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.140:38388#Vietnam%20Hai%20Duong%204",
+        "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.141:38388#Vietnam%20Hai%20Duong%205",
+        "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.142:38388?#Vietnam%20Hai%20Duong%206",
+        "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.144:38388#Vietnam%20Hai%20Duong%207",
+        "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.14:38388#Vietnam%20Hai%20Duong%208",
+        "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.15:38388?#Vietnam%20Hai%20Duong%209",
+        "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.16:38388?#Vietnam%20Hai%20Duong%2010",
+        "vmess://eyJhZGQiOiJoazAzLnN0aW1heXNtaHk4LmNvbSIsImFpZCI6IjAiLCJob3N0IjoiaGswMy5zdGltYXlzbWh5OC5jb20iLCJpZCI6IjcxMTY1MzkzLTUyNTItNGZlYS1hYzk2LWMzNmI1MDg3MjBjOCIsIm5ldCI6IndzIiwicGF0aCI6Ii8iLCJwb3J0IjoiNDQ1NTIiLCJwcyI6IkhvbmcgS29uZyIsInNjeSI6ImF1dG8iLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=",
+        "vmess://eyJ2IjoiMiIsInBzIjoiVW5pdGVkIEtpbmdkb20iLCJhZGQiOiJnYjAxLmpzeWxpYW5qaWU1LmNvbSIsInBvcnQiOiI0NTcxMiIsImlkIjoiNzExNjUzOTMtNTI1Mi00ZmVhLWFjOTYtYzM2YjUwODcyMGM4IiwiYWlkIjoiMCIsInNjeSI6ImF1dG8iLCJuZXQiOiJ3cyIsInR5cGUiOiJub25lIiwidGxzIjoiIiwicGF0aCI6Ii8iLCJob3N0IjoiZ2IwMS5qc3lsaWFuamllNS5jb20ifQ==",
+        "vmess://eyJ2IjoiMiIsInBzIjoiQW55Y2FzdC1JUCIsImFkZCI6ImhrMTguc3RpbWF5c21oeTguY29tIiwicG9ydCI6IjUxMjU0IiwiaWQiOiI3MTE2NTM5My01MjUyLTRmZWEtYWM5Ni1jMzZiNTA4NzIwYzgiLCJhaWQiOiIwIiwic2N5IjoiYXV0byIsIm5ldCI6IndzIiwidHlwZSI6Im5vbmUiLCJ0bHMiOiIiLCJwYXRoIjoiLyIsImhvc3QiOiJoazE4LnN0aW1heXNtaHk4LmNvbSJ9",
+        "trojan://nodes-d2ac438d@31.192.233.38:8443?security=tls&sni=node-hk-1.v2sv.top&insecure=1#Hong%20Kong",
+        "trojan://3PfyPiLUGm@216.234.140.55:47574/?type=grpc&security=reality&pbk=J7DCqfA-0diON1NvlmtTfS39hxEoKK7Nt8qCeh7IqQ4&fp=chrome&sni=aws.amazon.com&sid=7e50e4900bce65#USA%20Los%20Angeles",
+        "trojan://trojan@152.53.60.198:8444?security=tls&sni=jflsjlaf.pages.dev&type=ws&host=jflsjlaf.pages.dev&path=%2F#Anycast",
+        "hysteria2://ea8d14d4-ca12-4cd1-bcad-f0fa72f6eadc@212.193.18.60:8443/?insecure=1#Finland%20Helsinki",
+        "hysteria2://ea8d14d4-ca12-4cd1-bcad-f0fa72f6eadc@193.124.46.139:8443/?insecure=1#Turkey%20Istanbul",
+        "vless://424e7cc4-df34-3518-9c7b-401db4ece90a@s121.ccgfw.top:443?encryption=none&type=grpc&security=tls&sni=u710947u7938s121.ccgfw.top&serviceName=ssp#Germany%20Frankfurt",
+        "vless://424e7cc4-df34-3518-9c7b-401db4ece90a@s863.ccgfw.top:443?encryption=none&type=grpc&security=tls&sni=u710947u4a5cs863.ccgfw.top&serviceName=ssp#Germany%20Frankfurt%202",
+        "vless://424e7cc4-df34-3518-9c7b-401db4ece90a@s722.okgfw.top:443?encryption=none&type=tcp&flow=xtls-rprx-vision&security=tls&sni=u710947u3516s722.okgfw.top#Netherlands",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@1.164.6.18:50099#Taiwan%20Proxy",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@111.248.79.83:50099#Taiwan%20Proxy%202",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@1.163.202.26:50099#Taiwan%20Proxy%203",
+        "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.151.57.112:38388#Vietnam%20Proxy",
+        "vmess://eyJhZGQiOiJoazAzLnN0aW1heXNtaHk4LmNvbSIsImFpZCI6IjAiLCJpZCI6IjcxMTY1MzkzLTUyNTItNGZlYS1hYzk2LWMzNmI1MDg3MjBjOCIsIm5ldCI6IndzIiwicG9ydCI6IjQ0NTUyIiwicGF0aCI6Ii8iLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=",
+        "trojan://nodes-d2ac438d@31.192.233.38:8443?security=tls&sni=node-hk-1.v2sv.top#Hong%20Kong%20Trojan",
+        "trojan://3PfyPiLUGm@216.234.140.55:47574/?security=reality&pbk=J7DCqfA-0diON1NvlmtTfS39hxEoKK7Nt8qCeh7IqQ4&sni=aws.amazon.com#USA%20Trojan",
+        "hysteria2://ea8d14d4-ca12-4cd1-bcad-f0fa72f6eadc@212.193.18.60:8443/?insecure=1#Finland%20Hysteria",
+        "hysteria2://ea8d14d4-ca12-4cd1-bcad-f0fa72f6eadc@193.124.46.139:8443/?insecure=1#Turkey%20Hysteria",
+        "vless://26524cce-d514-4014-a426-365fb266a14d@43.250.54.63:8443?security=tls&type=ws&path=%2Fdanfeng%3Fed%3D2560#Anycast%20VLess",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@116.241.42.86:50099#Taiwan%20Taichung%20SS",
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@36.227.206.73:50099#Taiwan%20Taipei%20SS"
     ];
-    
-    function connectVPN() {
-        const randomConfig = vpnConfigs[Math.floor(Math.random() * vpnConfigs.length)];
-        window.location.href = randomConfig;
-        setTimeout(() => {
-            if (document.hasFocus()) {
-                alert("📱 Если приложение не открылось:\n1. Установите HAPP, v2rayNG, Nekobox или Sing-box\n2. Затем нажмите кнопку снова");
-            }
-        }, 1000);
+
+    // Функция для показа модального окна со всеми конфигурациями
+    function showAllConfigs() {
+        // Создаем модальное окно
+        const modal = document.createElement('div');
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.backgroundColor = 'rgba(0,0,0,0.8)';
+        modal.style.zIndex = '10000';
+        modal.style.display = 'flex';
+        modal.style.alignItems = 'center';
+        modal.style.justifyContent = 'center';
+        modal.style.padding = '20px';
+        
+        // Контент окна
+        const modalContent = document.createElement('div');
+        modalContent.style.backgroundColor = 'var(--light-beige)';
+        modalContent.style.borderRadius = '25px';
+        modalContent.style.maxWidth = '800px';
+        modalContent.style.width = '100%';
+        modalContent.style.maxHeight = '80vh';
+        modalContent.style.overflow = 'hidden';
+        modalContent.style.display = 'flex';
+        modalContent.style.flexDirection = 'column';
+        
+        // Заголовок
+        const header = document.createElement('div');
+        header.style.padding = '20px';
+        header.style.borderBottom = '2px solid var(--accent-beige)';
+        header.style.display = 'flex';
+        header.style.justifyContent = 'space-between';
+        header.style.alignItems = 'center';
+        header.innerHTML = `
+            <h2 style="margin:0; color: var(--text-color);">📋 Все конфигурации (${vpnConfigs.length})</h2>
+            <button id="closeModalBtn" style="background:none; border:none; font-size:28px; cursor:pointer; color: var(--dark-beige);">&times;</button>
+        `;
+        
+        // Список конфигураций
+        const listContainer = document.createElement('div');
+        listContainer.style.overflowY = 'auto';
+        listContainer.style.padding = '20px';
+        listContainer.style.flex = '1';
+        
+        vpnConfigs.forEach((config, index) => {
+            const configItem = document.createElement('div');
+            configItem.style.backgroundColor = 'white';
+            configItem.style.borderRadius = '15px';
+            configItem.style.padding = '12px';
+            configItem.style.marginBottom = '10px';
+            configItem.style.display = 'flex';
+            configItem.style.justifyContent = 'space-between';
+            configItem.style.alignItems = 'center';
+            configItem.style.flexWrap = 'wrap';
+            configItem.style.gap = '10px';
+            
+            // Извлекаем название из конфига
+            let name = config.split('#')[1] || `Конфиг ${index + 1}`;
+            if (name.includes('%20')) name = decodeURIComponent(name);
+            
+            const nameSpan = document.createElement('span');
+            nameSpan.innerHTML = `<strong>${index + 1}.</strong> ${name}`;
+            nameSpan.style.fontSize = '14px';
+            nameSpan.style.wordBreak = 'break-all';
+            nameSpan.style.flex = '1';
+            
+            const connectBtn = document.createElement('button');
+            connectBtn.innerHTML = '<i class="fas fa-link"></i> Подключить';
+            connectBtn.style.background = 'linear-gradient(45deg, var(--accent-beige), var(--dark-beige))';
+            connectBtn.style.color = 'white';
+            connectBtn.style.border = 'none';
+            connectBtn.style.padding = '8px 16px';
+            connectBtn.style.borderRadius = '25px';
+            connectBtn.style.cursor = 'pointer';
+            connectBtn.style.fontSize = '12px';
+            connectBtn.onclick = () => {
+                window.location.href = config;
+                modal.remove();
+            };
+            
+            const copyBtn = document.createElement('button');
+            copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+            copyBtn.style.background = 'var(--light-beige)';
+            copyBtn.style.border = 'none';
+            copyBtn.style.padding = '8px 12px';
+            copyBtn.style.borderRadius = '25px';
+            copyBtn.style.cursor = 'pointer';
+            copyBtn.style.marginLeft = '5px';
+            copyBtn.onclick = () => {
+                navigator.clipboard.writeText(config);
+                copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => copyBtn.innerHTML = '<i class="fas fa-copy"></i>', 1500);
+            };
+            
+            const btnContainer = document.createElement('div');
+            btnContainer.appendChild(connectBtn);
+            btnContainer.appendChild(copyBtn);
+            
+            configItem.appendChild(nameSpan);
+            configItem.appendChild(btnContainer);
+            listContainer.appendChild(configItem);
+        });
+        
+        modalContent.appendChild(header);
+        modalContent.appendChild(listContainer);
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+        
+        // Закрытие по клику на крестик
+        document.getElementById('closeModalBtn').onclick = () => modal.remove();
+        
+        // Закрытие по клику вне окна
+        modal.onclick = (e) => {
+            if (e.target === modal) modal.remove();
+        };
     }
-    
-    document.getElementById('quickConnectBtn').addEventListener('click', connectVPN);
-    
+
+    // Вешаем обработчик на кнопку
+    document.getElementById('quickConnectBtn').addEventListener('click', showAllConfigs);
+
     // Чередование картинок
     const dogs = document.querySelectorAll('.hero-dog');
     let currentDog = 0;
@@ -696,22 +807,22 @@
         currentDog = (currentDog + 1) % dogs.length;
         dogs[currentDog].classList.add('active');
     }, 4000);
-    
+
     // Бургер-меню
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     menuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
     });
-    
+
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
         });
     });
-    
+
     // Копирование
     document.querySelectorAll('.copy-btn').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -722,7 +833,7 @@
             setTimeout(() => btn.innerHTML = original, 1500);
         });
     });
-    
+
     // Проверка IP
     function checkIP() {
         fetch('https://api.ipify.org?format=json')
@@ -731,7 +842,7 @@
             .catch(() => alert('Не удалось определить IP'));
     }
     document.getElementById('checkIpBtn').addEventListener('click', checkIP);
-    
+
     // Табы
     const tabs = document.querySelectorAll('.platform-tab');
     const contents = {
@@ -739,7 +850,7 @@
         android: document.getElementById('android-content'),
         ios: document.getElementById('ios-content')
     };
-    
+
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const platform = tab.dataset.platform;
@@ -749,11 +860,11 @@
             if (contents[platform]) contents[platform].classList.add('active');
         });
     });
-    
+
     document.getElementById('scrollToSetupBtn').addEventListener('click', () => {
         document.getElementById('setup').scrollIntoView({ behavior: 'smooth' });
     });
-    
+
     // Факты
     const facts = [
         "Собаки могут понимать до 250 слов и жестов",
@@ -772,22 +883,6 @@
             factElement.style.opacity = '1';
         }, 300);
     }, 6000);
-    
-    // PWA
-    const manifest = {
-        name: "ПиляВПН",
-        short_name: "ПиляВПН",
-        start_url: ".",
-        display: "standalone",
-        background_color: "#F5F5DC",
-        theme_color: "#D2B48C",
-        icons: [{ src: "logo.png", sizes: "192x192", type: "image/png" }]
-    };
-    const manifestBlob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
-    const manifestLink = document.createElement('link');
-    manifestLink.rel = 'manifest';
-    manifestLink.href = URL.createObjectURL(manifestBlob);
-    document.head.appendChild(manifestLink);
 </script>
 </body>
 </html>
