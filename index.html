@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ПиляВПН - Преданность вашей анонимности</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#D2B48C">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ПиляВПН">
+    <link rel="apple-touch-icon" href="logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F5F5DC;
+            --light-beige: #F8F4E9;
+            --warm-beige: #E8D8C5;
+            --accent-beige: #D2B48C;
+            --dark-beige: #B99976;
+            --text-color: #5A4A42;
+            --shadow: 0 10px 30px rgba(90, 74, 66, 0.15);
+            --shadow-sm: 0 4px 12px rgba(90, 74, 66, 0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M20,20 Q30,10 40,20 T50,20 Q45,30 50,40 T40,50 Q30,45 20,50 T10,40 Q15,30 10,20 T20,20" fill="none" stroke="%23d2b48c" stroke-opacity="0.1" stroke-width="1.5"/><circle cx="28" cy="28" r="2" fill="%23d2b48c" fill-opacity="0.1"/><circle cx="38" cy="32" r="1.5" fill="%23d2b48c" fill-opacity="0.1"/></svg>');
+            background-repeat: repeat;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(120deg, var(--warm-beige) 0%, var(--accent-beige) 100%);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+            animation: gentleWag 3s ease-in-out infinite;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        @keyframes gentleWag {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+
+        .logo-text h1 {
+            font-family: 'Comfortaa', cursive;
+            font-weight: 700;
+            font-size: 26px;
+            margin: 0;
+        }
+
+        .logo-text .tagline {
+            font-size: 12px;
+            color: var(--dark-beige);
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 14px;
+            padding: 8px 18px;
+            border-radius: 30px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        nav a:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn {
+            background: linear-gradient(45deg, var(--accent-beige) 0%, var(--dark-beige) 100%);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 14px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--dark-beige) 0%, #9b7a5a 100%);
+            font-size: 16px;
+            padding: 14px 32px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 50px 0;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-family: 'Comfortaa', cursive;
+        }
+
+        .hero h2 span {
+            color: var(--dark-beige);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h2 span::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: rgba(210, 180, 140, 0.3);
+            z-index: -1;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.85;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-dog {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            border: 4px solid white;
+            transition: opacity 0.8s ease-in-out;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+
+        .hero-dog.active {
+            opacity: 1;
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: none;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* VPN Connect Card */
+        .vpn-connect-card {
+            background: linear-gradient(135deg, white, var(--light-beige));
+            border-radius: 30px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--accent-beige);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vpn-connect-card::before {
+            content: "🐾";
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.05;
+            bottom: -30px;
+            right: -30px;
+            transform: rotate(-15deg);
+        }
+
+        .connect-big-btn {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            border-radius: 60px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .connect-big-btn:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 12px 28px rgba(46, 125, 50, 0.4);
+        }
+
+        /* Features */
+        .features {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(28px, 5vw, 38px);
+            margin-bottom: 50px;
+            font-family: 'Comfortaa', cursive;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent-beige), var(--dark-beige));
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 25px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--accent-beige);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent-beige), var(--dark-beige));
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light-beige);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 36px;
+            color: var(--dark-beige);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(45deg, var(--accent-beige), var(--dark-beige));
+            color: white;
+        }
+
+        /* Server Cards */
+        .servers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .server-card {
+            background: white;
+            border-radius: 25px;
+            padding: 25px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--accent-beige);
+        }
+
+        .server-card.telegram-card {
+            background: linear-gradient(135deg, white, #F0F9FF);
+            border-left: 5px solid #27A7E7;
+        }
+
+        .server-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .server-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--warm-beige);
+        }
+
+        .info-label {
+            color: var(--dark-beige);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-value {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .copy-btn {
+            background: var(--light-beige);
+            border: none;
+            border-radius: 20px;
+            padding: 5px 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        .copy-btn:hover {
+            background: var(--accent-beige);
+            color: white;
+        }
+
+        /* Platform Tabs */
+        .setup-section {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px 0;
+            backdrop-filter: blur(5px);
+        }
+
+        .platform-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .platform-tab {
+            background: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .platform-tab.active {
+            background: linear-gradient(45deg, var(--accent-beige), var(--dark-beige));
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .platform-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .platform-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .instruction-steps {
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
+        }
+
+        .step {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: linear-gradient(45deg, var(--accent-beige), var(--dark-beige));
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Animation Section */
+        .animation-section {
+            text-align: center;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
+            margin: 40px 0;
+        }
+
+        .floating-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .floating-icon {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--dark-beige);
+            animation: float 3s ease-in-out infinite;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .floating-icon:nth-child(1) { animation-delay: 0s; }
+        .floating-icon:nth-child(2) { animation-delay: 0.5s; }
+        .floating-icon:nth-child(3) { animation-delay: 1s; }
+        .floating-icon:nth-child(4) { animation-delay: 1.5s; }
+        .floating-icon:nth-child(5) { animation-delay: 2s; }
+
+        /* Useless Facts */
+        .facts-section {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .fact-container {
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .fact-text {
+            font-size: 18px;
+            font-style: italic;
+            color: var(--dark-beige);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(120deg, var(--warm-beige) 0%, var(--dark-beige) 100%);
+            padding: 40px 0 20px;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .header-content {
+                flex-direction: column;
+            }
+            .setup-section {
+                padding: 20px;
+            }
+            .platform-tab {
+                padding: 8px 20px;
+                font-size: 12px;
+            }
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            .step-number {
+                margin: 0 auto;
+            }
+            .hero-image {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="logo.png" alt="ПиляВПН" class="logo-img" onerror="this.src='https://placehold.co/60x60/D2B48C/white?text=PVPN'">
+                <div class="logo-text">
+                    <h1>ПиляВПН</h1>
+                    <div class="tagline">🐕 Преданность вашей анонимности</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#features"><i class="fas fa-shield-alt"></i> Возможности</a></li>
+                    <li><a href="#servers"><i class="fas fa-server"></i> Серверы</a></li>
+                    <li><a href="#setup"><i class="fas fa-cogs"></i> Настройка</a></li>
+                    <li><a href="#facts"><i class="fas fa-paw"></i> Факты</a></li>
+                </ul>
+            </nav>
+            <button class="btn" id="checkIpBtn"><i class="fas fa-globe"></i> Мой IP</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <!-- Hero Section с чередующимися картинками -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Защитите свой интернет с <span>ПиляВПН</span> 🐾</h2>
+                <p>Надежный прокси-сервис с премиальным шифрованием и анонимным серфингом. Ваша безопасность - наш приоритет, как верного друга.</p>
+                <button class="btn btn-primary" id="scrollToSetupBtn"><i class="fas fa-wrench"></i> Инструкции по настройке</button>
+            </div>
+            <div class="hero-image">
+                <img src="dog_connected.jpg" alt="ПиляВПН защищает" class="hero-dog active" id="dog1">
+                <img src="dog_disconnected.jpg" alt="ПиляВПН охраняет" class="hero-dog" id="dog2">
+                <img src="dog_connecting.jpg" alt="ПиляВПН всегда рядом" class="hero-dog" id="dog3">
+            </div>
+        </section>
+
+        <!-- VPN Quick Connect -->
+        <div class="vpn-connect-card">
+            <i class="fas fa-dog" style="font-size: 50px; color: var(--dark-beige); margin-bottom: 15px; display: inline-block;"></i>
+            <h2 style="margin-bottom: 15px;">🚀 Мгновенное подключение VPN</h2>
+            <p style="margin-bottom: 20px;">Нажмите кнопку, чтобы импортировать рабочую конфигурацию в HAPP, v2rayNG или Nekobox</p>
+            <button class="connect-big-btn" id="quickConnectBtn">
+                <i class="fas fa-bolt"></i> Подключить VPN сейчас
+            </button>
+            <p style="font-size: 12px; margin-top: 20px;">✨ Поддержка VLESS / Reality / Hysteria2. Более 50+ серверов по всему миру</p>
+        </div>
+
+        <!-- Features -->
+        <section class="features" id="features">
+            <h2 class="section-title">Почему выбирают нас? 🐕</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-paw"></i></div>
+                    <h3>Собачья преданность</h3>
+                    <p>Мы будем верны вам, как самый преданный пёс, защищая ваши данные 24/7</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Забота о вас</h3>
+                    <p>Мы заботимся о вашей конфиденциальности, как о щенках - с любовью и нежностью</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bone"></i></div>
+                    <h3>Надёжность</h3>
+                    <p>Наши серверы крепки, как собачья кость - никакие хакеры их не разгрызут</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-dog"></i></div>
+                    <h3>Быстрая скорость</h3>
+                    <p>Быстрее, чем борзая за мячиком - вы даже не заметите, что используете прокси</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servers Section -->
+        <section id="servers">
+            <h2 class="section-title">🌍 Наши серверы</h2>
+            <div class="servers-grid">
+                <div class="server-card">
+                    <div class="server-header">
+                        <i class="fas fa-globe-europe"></i>
+                        <span>ПиляВПН-Чехия 🇨🇿</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label"><i class="fas fa-network-wired"></i> Адрес</span>
+                        <span class="info-value">78.80.228.150 <button class="copy-btn" data-text="78.80.228.150"><i class="fas fa-copy"></i></button></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label"><i class="fas fa-plug"></i> Порт</span>
+                        <span class="info-value">80 <button class="copy-btn" data-text="80"><i class="fas fa-copy"></i></button></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label"><i class="fas fa-signal"></i> Тип</span>
+                        <span class="info-value">HTTP</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label"><i class="fas fa-tachometer-alt"></i> Скорость</span>
+                        <span class="info-value">260 ms</span>
+                    </div>
+                </div>
+
+                <div class="server-card telegram-card">
+                    <div class="server-header">
+                        <i class="fab fa-telegram"></i>
+                        <span>Для Telegram 🇧🇬 Болгария</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label"><i class="fas fa-network-wired"></i> Адрес</span>
+                        <span class="info-value">45.136.198.40 <button class="copy-btn" data-text="45.136.198.40"><i class="fas fa-copy"></i></button></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label"><i class="fas fa-plug"></i> Порт</span>
+                        <span class="info-value">3128 <button class="copy-btn" data-text="3128"><i class="fas fa-copy"></i></button></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label"><i class="fas fa-lock"></i> Тип</span>
+                        <span class="info-value">HTTPS • Высокая анонимность</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label"><i class="fas fa-star"></i> Особенность</span>
+                        <span class="info-value">Оптимизирован для Telegram</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Setup Instructions -->
+        <section class="setup-section" id="setup">
+            <h2 class="section-title">📱 Инструкции по настройке</h2>
+            
+            <div class="platform-tabs">
+                <button class="platform-tab active" data-platform="windows"><i class="fab fa-windows"></i> Windows</button>
+                <button class="platform-tab" data-platform="android"><i class="fab fa-android"></i> Android</button>
+                <button class="platform-tab" data-platform="ios"><i class="fab fa-apple"></i> iOS</button>
+                <button class="platform-tab" data-platform="macos"><i class="fab fa-apple"></i> macOS</button>
+            </div>
+            
+            <div class="platform-content active" id="windows-content">
+                <div class="instruction-steps">
+                    <div class="step"><div class="step-number">1</div><div><strong>Откройте настройки сети</strong><br>Параметры → Сеть и Интернет → Прокси</div></div>
+                    <div class="step"><div class="step-number">2</div><div><strong>Настройте прокси вручную</strong><br>Включите "Использовать прокси-сервер"</div></div>
+                    <div class="step"><div class="step-number">3</div><div><strong>Введите данные сервера</strong><br>Адрес: <strong>78.80.228.150</strong>, Порт: <strong>80</strong></div></div>
+                    <div class="step"><div class="step-number">4</div><div><strong>Сохраните настройки</strong><br>Нажмите "Сохранить" - готово!</div></div>
+                </div>
+            </div>
+            
+            <div class="platform-content" id="android-content">
+                <div class="instruction-steps">
+                    <div class="step"><div class="step-number">1</div><div><strong>Откройте настройки Wi-Fi</strong><br>Настройки → Сеть и интернет → Wi-Fi</div></div>
+                    <div class="step"><div class="step-number">2</div><div><strong>Настройте сеть</strong><br>Нажмите и удерживайте на активной Wi-Fi сети, выберите "Изменить сеть"</div></div>
+                    <div class="step"><div class="step-number">3</div><div><strong>Расширенные настройки</strong><br>Раскройте "Расширенные настройки" и выберите "Ручная настройка прокси"</div></div>
+                    <div class="step"><div class="step-number">4</div><div><strong>Введите данные</strong><br>Имя узла: <strong>78.80.228.150</strong>, Порт: <strong>80</strong></div></div>
+                </div>
+            </div>
+            
+            <div class="platform-content" id="ios-content">
+                <div class="instruction-steps">
+                    <div class="step"><div class="step-number">1</div><div><strong>Откройте настройки Wi-Fi</strong><br>Настройки → Wi-Fi → нажмите на (i) рядом с активной сетью</div></div>
+                    <div class="step"><div class="step-number">2</div><div><strong>Настройте прокси</strong><br>Прокрутите вниз до "НАСТРОЙКА ПРОКСИ" и выберите "Вручную"</div></div>
+                    <div class="step"><div class="step-number">3</div><div><strong>Введите данные</strong><br>Сервер: <strong>78.80.228.150</strong>, Порт: <strong>80</strong></div></div>
+                    <div class="step"><div class="step-number">4</div><div><strong>Сохраните</strong><br>Нажмите "Назад" для сохранения</div></div>
+                </div>
+            </div>
+            
+            <div class="platform-content" id="macos-content">
+                <div class="instruction-steps">
+                    <div class="step"><div class="step-number">1</div><div><strong>Откройте системные настройки</strong><br>Системные настройки → Сеть</div></div>
+                    <div class="step"><div class="step-number">2</div><div><strong>Выберите соединение</strong><br>Выберите активное соединение → "Дополнительно"</div></div>
+                    <div class="step"><div class="step-number">3</div><div><strong>Настройте прокси</strong><br>Вкладка "Прокси" → "Веб-прокси (HTTP)"</div></div>
+                    <div class="step"><div class="step-number">4</div><div><strong>Введите данные</strong><br>Сервер: <strong>78.80.228.150</strong>, Порт: <strong>80</strong> → "ОК" → "Применить"</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Useless Facts Section -->
+        <section class="facts-section" id="facts">
+            <h2 class="section-title">Забавные факты о собаках 🐕</h2>
+            <div class="fact-container">
+                <div class="fact-text" id="uselessFact">
+                    Собаки могут понимать до 250 слов и жестов, что делает их умнее, чем обычный человек (но не пользователя ПиляВПН).
+                </div>
+            </div>
+        </section>
+
+        <!-- Animation Section -->
+        <div class="animation-section">
+            <h2 class="section-title">🔒 Технологии защиты</h2>
+            <p>Передовые методы шифрования для вашей полной анонимности</p>
+            <div class="floating-icons">
+                <div class="floating-icon"><i class="fas fa-lock"></i></div>
+                <div class="floating-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="floating-icon"><i class="fas fa-key"></i></div>
+                <div class="floating-icon"><i class="fas fa-user-secret"></i></div>
+                <div class="floating-icon"><i class="fas fa-globe"></i></div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">ПиляВПН 🐕</h3>
+                <p>Ваш надежный партнер в мире безопасного интернета. Мы заботимся о вашей конфиденциальности как о своей собственной.</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Быстрые ссылки</h3>
+                <ul class="footer-links">
+                    <li><a href="#features"><i class="fas fa-chevron-right"></i> Возможности</a></li>
+                    <li><a href="#servers"><i class="fas fa-chevron-right"></i> Серверы</a></li>
+                    <li><a href="#setup"><i class="fas fa-chevron-right"></i> Настройка</a></li>
+                    <li><a href="#facts"><i class="fas fa-chevron-right"></i> Факты</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Контакты</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:support@pilyavpn.com"><i class="fas fa-envelope"></i> support@pilyavpn.com</a></li>
+                    <li><a href="https://t.me/pilyavpn_support" target="_blank"><i class="fab fa-telegram"></i> @pilyavpn_support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 ПиляВПН. Все права защищены. Ваша анонимность - наша миссия. 🐾</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Чередование картинок собачек
+    const dogImages = ['dog_connected.jpg', 'dog_disconnected.jpg', 'dog_playing.jpg'];
+    let currentDogIndex = 0;
+    const dogElements = document.querySelectorAll('.hero-dog');
+    
+    function rotateDogImages() {
+        dogElements.forEach(img => img.classList.remove('active'));
+        currentDogIndex = (currentDogIndex + 1) % dogElements.length;
+        dogElements[currentDogIndex].classList.add('active');
+    }
+    
+    // Меняем картинку каждые 4 секунды
+    setInterval(rotateDogImages, 4000);
+    
+    // Забавные факты
+    const uselessFacts = [
+        "Средняя собака бегает со скоростью 19 км/ч — быстрее, чем ваш интернет без прокси.",
+        "Собаки потеют только через подушечки лап. Прокси потеет через все серверы одновременно.",
+        "У собак три века. У прокси — три уровня шифрования.",
+        "Собаки могут слышать на частотах до 45 кГц. Прокси не может слышать ваши секреты, хотя мы сами не уверены)",
+        "Ошейник от блох был изобретен в 2000 году. Прокси был изобретен в принципе.",
+        "Собаки чихают, когда играют, чтобы показать, что это дружеская игра. Прокси не чихает вообще, к сожалению(",
+        "Самой умной породой собак считается бордер-колли. Самый умный прокси - ПиляВПН!",
+        "Собаки видят сны, как и люди. Прокси тоже видят сны - о безопасном интернете для всех.",
+        "Нос собаки уникален, как отпечаток пальца человека. IP-адрес ПиляВПН тоже уникален для вашей защиты."
+    ];
+    
+    const factElement = document.getElementById('uselessFact');
+    
+    function showRandomFact() {
+        const randomIndex = Math.floor(Math.random() * uselessFacts.length);
+        factElement.style.opacity = '0';
+        setTimeout(() => {
+            factElement.textContent = uselessFacts[randomIndex];
+            factElement.style.transition = 'opacity 0.5s ease';
+            factElement.style.opacity = '1';
+        }, 300);
+    }
+    
+    setInterval(showRandomFact, 8000);
+    
+    // VPN конфигурации
+    const vpnLinks = [
+        "vless://834f0646-8b24-42a0-8203-e5145474113f@146.185.240.92:8443?encryption=none&type=xhttp&security=reality&host=5post-gate-test.x5.ru&path=%2Fapi%2Fmaps&mode=auto&extra=null&fp=qq&sni=5post-gate-test.x5.ru&pbk=YSkQioSPgjJfiRkpOvuoYxukh-1xdsD10TQCp1-udHI&sid=0123456789abcdef#ПиляВПН%20Финляндия",
+        "vless://42fc15d6-1eed-4013-a4c9-3e77915fb817@152.89.244.196:8443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=random&sni=tradingview.com&pbk=4gcDJumxa0bTaHvrZRL4Hb5ItXPha6ZYZ0fGmMD_k0A&sid=1afc9d750da1ba88#ПиляВПН%20Финляндия%202",
+        "vless://3d737761-5951-462e-86c1-ff921d9f9999@87.239.107.34:8443?encryption=none&type=xhttp&security=reality&host=5post-gate-test.x5.ru&path=/api/maps&mode=auto&extra=null&fp=qq&sni=5post-gate-test.x5.ru&pbk=YSkQioSPgjJfiRkpOvuoYxukh-1xdsD10TQCp1-udHI#ПиляВПН%20Финляндия%203",
+        "hysteria2://dongtaiwang.com@62.210.124.146:22000/?insecure=1&sni=www.microsoft.com#ПиляВПН%20Франция"
+    ];
+    
+    function connectVPN() {
+        const randomLink = vpnLinks[Math.floor(Math.random() * vpnLinks.length)];
+        window.location.href = randomLink;
+        setTimeout(() => {
+            if (document.hasFocus()) {
+                alert("📱 Если приложение не открылось:\n1. Установите HAPP, v2rayNG или Nekobox\n2. Затем нажмите кнопку снова");
+            }
+        }, 1000);
+    }
+    
+    document.getElementById('quickConnectBtn').addEventListener('click', connectVPN);
+    
+    // Копирование
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const text = btn.getAttribute('data-text');
+            if (text) {
+                navigator.clipboard.writeText(text);
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => btn.innerHTML = original, 1500);
+            }
+        });
+    });
+    
+    // Проверка IP
+    function checkIP() {
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => alert(`🌐 Ваш текущий IP: ${data.ip}\n\nПроверьте, изменился ли он после подключения VPN!`))
+            .catch(() => alert('Не удалось определить IP'));
+    }
+    document.getElementById('checkIpBtn').addEventListener('click', checkIP);
+    
+    // Платформенные табы
+    const tabs = document.querySelectorAll('.platform-tab');
+    const contents = {
+        windows: document.getElementById('windows-content'),
+        android: document.getElementById('android-content'),
+        ios: document.getElementById('ios-content'),
+        macos: document.getElementById('macos-content')
+    };
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const platform = tab.dataset.platform;
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            Object.values(contents).forEach(content => content?.classList.remove('active'));
+            if (contents[platform]) contents[platform].classList.add('active');
+        });
+    });
+    
+    // Прокрутка
+    document.getElementById('scrollToSetupBtn').addEventListener('click', () => {
+        document.getElementById('setup').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    // PWA manifest
+    const manifest = {
+        name: "ПиляВПН",
+        short_name: "ПиляВПН",
+        start_url: ".",
+        display: "standalone",
+        background_color: "#F5F5DC",
+        theme_color: "#D2B48C",
+        icons: [
+            { src: "logo.png", sizes: "192x192", type: "image/png" },
+            { src: "logo.png", sizes: "512x512", type: "image/png" }
+        ]
+    };
+    const manifestBlob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
+    const manifestURL = URL.createObjectURL(manifestBlob);
+    const manifestLink = document.createElement('link');
+    manifestLink.rel = 'manifest';
+    manifestLink.href = manifestURL;
+    document.head.appendChild(manifestLink);
+</script>
+</body>
+</html>
